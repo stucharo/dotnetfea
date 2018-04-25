@@ -1,0 +1,16 @@
+ # File f.vis
+ meshFile = f.mesh
+ resultFile = f.res
+ parm = ux
+ 
+ showEdges = y
+ showNodes = y
+ nContours = 8
+
+ ndivmin = 2
+ ndivmax = 16
+
+ fmin = 0.85
+ fmax = 3.0
+
+ end

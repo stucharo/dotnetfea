@@ -1,0 +1,12 @@
+# Contours of stress Sy
+
+  meshFile = hole3d.mesh
+  resultFile = hole3d.lst.1
+  
+  deformScale = 0.2
+  parm = Sy 
+  nContours = 10
+  fmin = 0
+  fmax = 3.0
+end 
+

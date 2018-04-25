@@ -1,0 +1,22 @@
+# Elastic-plastic problem, simple tension, 3D
+  physLaw = elPlastic
+
+  includeFile f.mesh
+
+#      Mat  name E nu alpha SY   k   m
+  material = mat 1 0.3 0.0 1.0 0.5 1.0
+
+# Displacement boundary conditions
+  boxConstrDispl = x 0.0 -0.1 -0.1 -0.1 0.1 2.1 1.1
+  boxConstrDispl = y 0.0 -0.1 -0.1 -0.1 1.1 0.1 1.1
+  boxConstrDispl = z 0.0 -0.1 -0.1 -0.1 1.1 2.1 0.1
+end
+
+loadStep = A
+  boxSurForce = y 1.0 -0.1 1.9 -0.1 1.1 2.1 1.1
+end
+
+loadStep = B
+  scaleLoad = 0.5
+  residTolerance = 0.001
+end

@@ -1,0 +1,10 @@
+fea.JFEM: FE code. Data file: hole3d.fem
+Date: 2009-09-16  Time: 16:30:39
+
+Number of elements    nEl = 148
+Number of nodes      nNod = 908
+Number of dimensions nDim = 3
+Memory for global matrix:    6.11 MB
+Loadstep 1
+
+Solution time =       0.39 s

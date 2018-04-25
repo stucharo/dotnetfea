@@ -1,0 +1,11 @@
+fea.JFEM: FE code. Data file: f.fem
+Date: 2009-09-16  Time: 16:30:01
+
+Number of elements    nEl = 2
+Number of nodes      nNod = 32
+Number of dimensions nDim = 3
+Memory for global matrix:    0.03 MB
+Loadstep A
+Loadstep B    20 iterations, Relative residual norm =    0.00075
+
+Solution time =       0.06 s

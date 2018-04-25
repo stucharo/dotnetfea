@@ -1,0 +1,44 @@
+fea.Jmgen: Mesh generator. Data file: hole3d.gen
+Date: 2009-09-16  Time: 16:30:36
+------------------------------------
+GenQuad8: b1
+ nh =    4
+ nv =    4
+ res:    0.150  0.150  0.850  0.000
+ xyp:    1.000  0.000  1.500  0.000  2.000  0.000  2.000  1.000
+         2.000  2.000  1.354  1.354  0.707  0.707  0.924  0.383
+Mesh b1: nEl = 16  nNod = 65
+------------------------------------
+GenQuad8: b2
+ nh =    4
+ nv =    3
+ res:    0.150  0.000  0.850  0.000
+ xyp:    0.707  0.707  1.354  1.354  2.000  2.000  1.000  2.000
+         0.000  2.000  0.000  1.500  0.000  1.000  0.383  0.924
+Mesh b2: nEl = 12  nNod = 51
+------------------------------------
+Connect: b1 + b2 -> b12
+ Coordinate error tolerance eps =  1.000e-02
+ 9 node pairs connected
+Mesh b12: nEl = 28  nNod = 107
+------------------------------------
+Rectangle: b3
+ nx =    3
+ ny =    3
+ xs:    0.000  0.667  1.333  2.000
+ ys:    2.000  2.667  3.333  4.000
+Mesh b3: nEl = 9  nNod = 40
+------------------------------------
+Connect: b12 + b3 -> b123
+ Coordinate error tolerance eps =  1.000e-01
+ 7 node pairs connected
+Mesh b123: nEl = 37  nNod = 140
+------------------------------------
+Sweep: b123 b3
+ nlayers =    4
+ rotate  = N
+ zlay:    0.000  0.250  0.500  0.750  1.000
+Mesh b3: nEl = 148  nNod = 908
+------------------------------------
+WriteMesh: b3    hole3d.mesh
+Mesh b3: nEl = 148  nNod = 908

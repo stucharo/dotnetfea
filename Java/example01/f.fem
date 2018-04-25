@@ -1,0 +1,42 @@
+# Number of nodes and number of elements
+  nNod = 13   nEl = 2
+
+# Plane stress state, 2D problem 
+ stressState = PLSTRESS
+
+# Enable thermal loading option
+  thermalLoading = Y
+
+# Material properties: 
+# material name, elasticity modulus, Poisson's ratio and
+#    coefficient of thermal expansion
+  material = 1   1   0.3   0.1  
+
+# Nodal coordinates
+  nodCoord = 0 0  0 0.5  0 1  0.5 0  0.5 1
+             1 0  1 0.5  1 1  1.5 0  1.5 1
+             2 0  2 0.5  2 1
+
+# Element data: element type, material, connectivities
+  elCon = QUAD8 1  1  4  6  7  8  5  3  2
+          QUAD8 1  6  9 11 12 13 10  8  7
+
+# Constraints: direction, value, number of constraints, 
+#    node numbers
+  constrDispl = x 0.0 2  1 -3
+  constrDispl = y 0.0 5  1 4 6 9 11
+  
+end  
+  
+# Load
+  loadStep = 1
+  
+# Surface load: direction, element number, number of face
+#    nodes, face node numbers, intensities  
+  surForce = x  2 3 11 12 13  1 1 1
+
+# Nodal temperatures
+  nodTemp = 10 10 10 10 10 10 10 10 10 10 10 10 10
+
+end
+

@@ -1,0 +1,19 @@
+# 3D rectangular plate with a central hole
+# Finite element analysis
+
+  StressState = threeD
+
+  IncludeFile hole3d.mesh
+
+#  Solver = PCG
+
+  Material = 1  1000  0.3  1.0
+
+  BoxConstrDispl = x  0.0   -0.01  0.99 -0.01  0.01 4.01 1.01
+  BoxConstrDispl = y  0.0    0.99 -0.01 -0.01  2.01 0.01 1.01
+  BoxConstrDispl = z  0.0   -0.01 -0.01 -0.01  2.01 4.01 0.01
+end
+
+LoadStep = 1
+  BoxSurForce = n 1.0  -0.01 3.99 -0.01  2.01 4.01 2.01
+end

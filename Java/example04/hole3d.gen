@@ -1,0 +1,41 @@
+# 3D rectangular plate with a central hole
+# Mesh generation
+
+genquad8 b1
+  nh = 4  nv = 4
+  xyp = 1 0  0 0  2 0  0 0  
+        2 2  0 0  0.7071 0.7071  0.9239 0.3827
+  res = 0.15 0.15 0.85 0
+end 
+
+genquad8 b2
+  nh = 4  nv = 3
+  xyp = 0.7071 0.7071  0 0  2 2  0 0  
+        0 2  0 0  0 1  0.3827 0.9239
+  res = 0.15 0 0.85 0
+end 
+
+connect b1 b2 b12
+  eps = 0.01
+end
+
+rectangle b3
+  nx = 3  ny = 3
+  xs = 0 0.6667 1.3333 2
+  ys = 2 2.6667 3.3333 4
+end 
+
+connect b12 b3 b123
+  eps = 0.1
+end
+
+sweep b123 b3
+  nlayers = 4
+  zlayers = 0 0.25 0.5 0.75 1
+end
+
+writemesh b3 hole3d.mesh
+
+
+
+
